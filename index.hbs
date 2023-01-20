@@ -2,7 +2,7 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
+<div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}" style="backbround-color:#f6f7f9">
 
     {{#if @custom.show_publication_cover}}
         {{#if @site.cover_image}}
@@ -30,7 +30,7 @@ into the {body} of the default.hbs template --}}
                 {{/if}}
             {{/match}}
             {{#if @site.description}}
-                <p class="site-description">{{@site.description}}</p>
+                <p class="site-description" style="color: #343f52;">{{@site.description}}</p>
             {{/if}}
         </div>
     {{/match}}
