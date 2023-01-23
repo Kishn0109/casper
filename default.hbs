@@ -23,228 +23,91 @@
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
-        .nav-wraper{
-            width: 100%;
-            background-color: white;
-            padding:  0rem 2rem;
-            border-radius: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            
-            
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 8rem;
+            padding: 10px;
         }
-        .header{
-            background-color: white;
+        .grid-item {
+            padding: 20px;
+            font-size: 1.6rem;
+            text-align: start;
         }
-
-        .header-container{
+        .cms-container{
             height: 100%;
             width: 100%;
-            background-color: white;
         }
-        .header .nav{
-            gap: 0;
+        .footer{
+            background-color: #21262c!important;
         }
-        .header .nav li{
-            padding: 0;
-            margin: 0;
+        .footer-inner{
+            padding-top: 8rem;
         }
-        .header .nav li a{
-            display: block;
-            padding: 2.5rem 1.2rem;
+        .footer .grid-item{
+            padding: 0rem 1.5rem;
+        }
+        .footer-logo{
+            margin-bottom: 2rem;
+        }
+        .grid-container li a {
             font-size: 1.6rem;
-            font-weight: 700;
-            color: white ;
-            transition: all 200ms ease-in-out;
-            word-spacing: 0.1px;
-            line-height: 1.7;
-            letter-spacing: -.02rem;
-            font-family: "Work Sans", sans-serif !important;
             text-decoration: none;
-            
+            color:#cacaca!important
         }
-        .header .nav {
-            padding-right: 0; 
+        .grid-container .learn-more .nav{
+            display: block;
         }
-     
-        .navigation-link-wraper{
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            top: 0;
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #1e2228;
-        }
-        .navigation-link-wraper .nav{
-            display: flex;
-            flex-direction: column;
-            width: 30rem;
-            align-items: center;
-            padding-top: 1rem;
+        .get-in-touch a{
+            text-decoration: none;
             color: white;
-
         }
-        .hide-sidebar{
-            left: -100% !important;
-            transition: 0.5s ease-in-out;
-        }
-        .log-for-small-screen{
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            align-items: center;
-           
-        }
-        .log-for-small-screen a{
-            
-            padding: 2.4rem 0rem;
-        }
-        button.hamburger-menu::before{
-            content: "";
-            display: block;
-            width: 100%;
-            height: 3px;
-            margin: 0 0 5px;
-            transition: all 200ms ease-in-out;
-            background: #343f52;
-            box-sizing: border-box`;
-        }
-        button.hamburger-menu::after{
-            content: "";
-            display: block;
-            width: 100%;
-            height: 3px;
-            margin: 0 0 5px;
-            transition: all 200ms ease-in-out;
-            background: #343f52;
-            box-sizing: border-box`;
-        }
-        .hamburger-menu{
-            width: 2.4rem;
-            height: 2.2rem;
-        }
-        .hamburger-menu span{
-            display: block;
-            width: 100%;
-            height: 3px;
-            margin: 0 0 5px;
-            transition: all 200ms ease-in-out;
-            background: #343f52;
-        }
-        button.hamburger-menu.active span{
-            -webkit-transform: scale(0)
-        } 
-        
-        .active {
-            color: rgba(37,37,37,.356)!important;
-        }
-        
-        .sidebar-logo{
-            width: 200px;
-            padding: 3rem 0rem;
-        }
-        .show-sidebar{
-            left: 0% !important;
-            transition: 0.5s ease-in-out;
+        .get-in-touch a:hover{
+            text-decoration: underline;
+            color: blue;
         }
 
-        button.hamburger-menu.active::before{
-            transform: translateY(8px)rotate(45deg);
-            --webkit-transform: translateY(8px)rotate(45deg);
-        }
-        button.hamburger-menu.active::after{
-            transform: translateY(-8px)rotate(-45deg);
-            --webkit-transform: translateY(-8px)rotate(-45deg);;
-        }
-  
-  
-        @media (min-width: 576px) {  
-            .header-container{
+ 
+ 
+        @media (min-width: 576px) { 
+            .cms-container{
                 padding: 0;
                 margin-left: auto;
                 margin-right: auto;
                 max-width: 540px;
             }
-        }
+            .grid-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+         }
 
         @media (min-width: 768px) { 
-            .header-container{
+            .cms-container{
                 max-width: 720px;
             }
-            
          }
 
         @media (min-width: 992px) { 
-            .header-container{
-                max-width: 960px;
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-                margin-left: 0rem auto;                
+            .cms-container{
+                height: 100%;
+                width: 100%;
             }
-            .header{
-
-                background-color: transparent;
-            }
-            .nav-wraper{
-                margin-top: 4.5rem;
-                box-shadow: 0 0.25rem 0.75rem rgb(30 34 40 / 2%);
-            }   
-            .navigation-link-wraper{
-                position: relative;
-                
-            }
-            .navigation-link-wraper .nav{
-                display: flex;
-                flex-direction: row;
-                padding: 0;
-                align-items: unset;
-                background-color: white;
-                width: unset;
-            }
-            .log-for-small-screen{
-                display: unset;
-                width: unset;
-            }
-            .hide-sidebar{
-                left: 0%;
-                position: initial;
-            }
-            .header-container{
-                background-color: unset;
-            }
-            .log-for-small-screen a{
-                padding: 0rem 0rem;
-            }
-            .header .nav li a{
-                color: #343f52;
-            }
-            .sidebar-logo{
-                display: none;
-            }
-        }
-
-
-        @media (min-width: 1200px) { 
-            .header-container{
-                max-width: 1140px; 
-            }
-            .header .nav li a{
-                padding-left: 2rem;
-                padding-right: 2rem;
-                
+            .grid-container {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
             }
          }
 
-        @media (min-width: 1400px) {  
-            .header-container{
-                max-width: 1320px; 
+        @media (min-width: 1200px) { 
+            .cms-container{
+                max-width: 1140px;
             }
-        }
+         }
+
+        @media (min-width: 1400px) { 
+            .cms-container{
+                max-width: 1320px;
+            }
+         }
     </style>
 
 </head>
@@ -290,14 +153,80 @@
     </div>
 
     {{!-- The global footer at the very bottom of the screen --}}
-    <footer class="site-footer outer">
-        <div class="inner">
-            <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <nav class="site-footer-nav">
-                {{navigation type="secondary"}}
-            </nav>
-            <div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
+    <footer class=" footer text-white"  style="color:#cacaca!important">
+        <div class="container footer-inner ">
+            <div class="grid-container">
+            <div class="grid-item">
+                <div  style="margin-bottom: 2rem;">
+                    <a class="footer-logo" href="{{@site.url}} ">
+                        {{#if @site.logo}}
+                            <img src="https://res.cloudinary.com/cdmnk/image/upload/f_auto,q_85/v1639476272/assets/images/brands/jeryqxjgicup4atwuyv8.png" alt="{{@site.title}}" style="width: 200px;">
+                        {{else}}
+                            {{@site.title}}
+                        {{/if}}                            
+                    </a>
+                </div>
+                <span>A full-fledged product design and engineering services firm.</span>
+            </div>
+            <div class="grid-item learn-more">
+                <h5 class="font-normal text-white text-4xl " style="margin-bottom: 2rem;">Learn More</h5>
+                {{navigation}}
+            </div>
+            <div class="grid-item get-in-touch">
+                <h5 class="font-normal text-white text-4xl" style="margin-bottom: 2rem;">Get in Touch</h5>   
+                <div>Hustlehub Tech Park, #36/5, Somasandrapalya, Sector 2, adjacent 27th Main Road, HSR Layout, Bengaluru, Karnataka 560102</div>
+                <div class="my-2">
+                    <a href="#" >info@codemonk.in</a>
+                </div>
+                <div class="my-2">
+                    <a href="#">+91 70197 97401</a>
+                </div>
+            </div>
+            <div class="grid-item">
+                <h5 class="font-normal text-white text-4xl" style="margin-bottom: 2.1rem;">Visit us</h5>
+                <nav class="nav social social-white flex flex-wrap gap-4">
+                    <a class="mt-2" href="https://www.linkedin.com/company/codemonk/" target="_blank" style="text-decoration: none">
+                        <img id="footer_icons" style="background-color: white; border-radius: 50px" src="https://res.cloudinary.com/cdmnk/image/upload/f_auto,q_75/v1650976544/assets/images/icons/linkedin-icon.svg" alt="Linkedin" width="30">
+                    </a>
+                    
+                    <a class="mt-2" href="https://twitter.com/codemonkhq" target="_blank" style="text-decoration: none">
+                        <img id="footer_icons" style="background-color: white; border-radius: 50px" src="https://res.cloudinary.com/cdmnk/image/upload/f_auto,q_75/v1658300623/assets/images/icons/twitter-icon.svg" alt="Twitter" width="30">
+                    </a>
+                    
+                    <a class="mt-2" href="https://www.instagram.com/codemonkhq/" target="_blank" style="text-decoration: none">
+                        <img id="footer_icons" style="background-color: white; border-radius: 50px" src="https://res.cloudinary.com/cdmnk/image/upload/f_auto,q_75/v1658300623/assets/images/icons/instagram-icon.svg" alt="Instagram" width="30">
+                    </a>
+                    
+                    <a class="mt-2" href="https://www.youtube.com/channel/UCcj5uByXG_kESiMlmrfdFVg" target="_blank" style="text-decoration: none">
+                        <img id="footer_icons" style="background-color: white; border-radius: 50px" src="https://res.cloudinary.com/cdmnk/image/upload/f_auto,q_75/v1658300623/assets/images/icons/youtube-icon.svg" alt="Youtube" width="30">
+                    </a>
+                    
+                    <a class="mt-2" href="https://www.behance.net/codemonkhq" target="_blank" style="text-decoration: none">
+                        <img id="footer_icons" style="background-color: white; border-radius: 50px" src="https://res.cloudinary.com/cdmnk/image/upload/f_auto,q_75/v1650976510/assets/images/icons/behance-icon.svg" alt="Behance" width="30">
+                    </a>
+                    
+                    <a class="mt-2" href="https://medium.com/codemonkhq" target="_blank" style="text-decoration: none">
+                        <img id="footer_icons" style="background-color: white; border-radius: 50px" src="https://res.cloudinary.com/cdmnk/image/upload/f_auto,q_75/v1650976571/assets/images/icons/medium-icon.svg" alt="Medium" width="30">
+                    </a>
+                    
+                    <a class="mt-2" href="https://angel.co/company/codemonkhq" target="_blank" style="text-decoration: none">
+                        <img id="footer_icons" style="background-color: white; border-radius: 50px" src="https://res.cloudinary.com/cdmnk/image/upload/f_auto,q_75/v1650976449/assets/images/icons/angellist-icon.svg" alt="Angellist" width="30">
+                    </a>
+                </nav>
+            </div>
+            </div>
+            <div class="text-center pt-10 pb-5 d-flex flex-row justify-content-center text-white">
+                <p style="font-size: 10px" class="m-0">© 2018 - {{date format= "YYYY"}} Codemonk | An</p>
+                &nbsp;
+                <p style="font-size: 10px" class="m-0">
+                <a href="https://elvago.io/" target="_blank" style="text-decoration: none;color: white;margin: 0rem 0.5rem ;"> Elvago Technologies </a>
+                </p>
+                &nbsp;
+                <p style="font-size: 10px" class="m-0">Company</p>
+            </div>
+            
         </div>
+        
     </footer>
 
 </div>
@@ -320,6 +249,8 @@ $(document).ready(function () {
     // FitVids - Makes video embeds responsive
     $(".gh-content").fitVids();
 });
+
+//header script
 document.getElementById("close-btn").addEventListener('click',function (){
     console.log("clicked on the btn");
     let navigationLinkWraper =document.getElementsByClassName("navigation-link-wraper")[0];
