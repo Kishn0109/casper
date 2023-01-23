@@ -263,7 +263,6 @@
                         {{/if}}
                     </a>
                     <div class="flex lg:hidden items-center">   
-                        {{!-- <button class="gh-search gh-icon-btn" data-ghost-search style="width: 50px;height:60px;margin:0rem 1rem;">{{> "icons/search"}}</button> --}}
                         <button id="hamburger-menu" class="hamburger-menu" >
                             <span></span>
                         </button>
@@ -281,35 +280,9 @@
                         <button id="close-btn" class="absolute lg:hidden top-4 right-4">cross</button>
                 </div>
             </div>
-        </div>
-        {{!-- <div class="gh-head-inner inner bg-white font-[20px] text-[#343f52] w-full mx-0 py-[24px] gap-0 px-[1rem]" style="gap:0;column-gap: 0px;border-radius: 8px;box-shadow: 0 0.25rem 0.75rem rgb(30 34 40 / 2%);">
-                <div class="gh-head-brand ">
-                    <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
-                        {{#if @site.logo}}
-                            <img src="{{@site.logo}}" alt="{{@site.title}}">
-                        {{else}}
-                            {{@site.title}}
-                        {{/if}}
-                    </a>
-                    <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-                    <button class="gh-burger"></button>
-                </div>
-                <nav class="gh-head-menu" style="margin:0;justify-content: end;">
-                    {{navigation}}
-                    {{#unless @site.members_enabled}}
-                        {{#match @custom.navigation_layout "Stacked"}}
-                            <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-                        {{/match}}
-                    {{/unless}}
-                </nav>  
-        </div> --}}
-        {{!-- <nav>
-            {{navigation}}
-        </nav> --}}
+        </div>  
     </header>
-    {{!-- <div class="w-full h-[10vh] border-2 border-red-500">
-        karan
-    </div> --}}
+
 
     <div class="site-content pages">
         {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
