@@ -172,6 +172,9 @@ button.hamburger-menu.active::after {
     background-color: white;
     width: unset;
   }
+  .navigation-link-wraper .nav a:hover {
+    color: blue;
+  }
   .log-for-small-screen {
     display: unset;
     width: unset;

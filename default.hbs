@@ -23,91 +23,7 @@
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
     <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-            gap: 8rem;
-            padding: 10px;
-        }
-        .grid-item {
-            padding: 20px;
-            font-size: 1.6rem;
-            text-align: start;
-        }
-        .cms-container{
-            height: 100%;
-            width: 100%;
-        }
-        .footer{
-            background-color: #21262c!important;
-        }
-        .footer-inner{
-            padding-top: 8rem;
-        }
-        .footer .grid-item{
-            padding: 0rem 1.5rem;
-        }
-        .footer-logo{
-            margin-bottom: 2rem;
-        }
-        .grid-container li a {
-            font-size: 1.6rem;
-            text-decoration: none;
-            color:#cacaca!important
-        }
-        .grid-container .learn-more .nav{
-            display: block;
-        }
-        .get-in-touch a{
-            text-decoration: none;
-            color: white;
-        }
-        .get-in-touch a:hover{
-            text-decoration: underline;
-            color: blue;
-        }
-
- 
- 
-        @media (min-width: 576px) { 
-            .cms-container{
-                padding: 0;
-                margin-left: auto;
-                margin-right: auto;
-                max-width: 540px;
-            }
-            .grid-container {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-         }
-
-        @media (min-width: 768px) { 
-            .cms-container{
-                max-width: 720px;
-            }
-         }
-
-        @media (min-width: 992px) { 
-            .cms-container{
-                height: 100%;
-                width: 100%;
-            }
-            .grid-container {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-            }
-         }
-
-        @media (min-width: 1200px) { 
-            .cms-container{
-                max-width: 1140px;
-            }
-         }
-
-        @media (min-width: 1400px) { 
-            .cms-container{
-                max-width: 1320px;
-            }
-         }
+        
     </style>
 
 </head>
@@ -153,7 +69,7 @@
     </div>
 
     {{!-- The global footer at the very bottom of the screen --}}
-    <footer class=" footer text-white"  style="color:#cacaca!important">
+    <footer class="footer text-white"  style="color:#cacaca!important">
         <div class="container footer-inner ">
             <div class="grid-container">
             <div class="grid-item">
