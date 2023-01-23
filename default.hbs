@@ -11,58 +11,239 @@
 
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+        .nav-wraper{
+            width: 100%;
+            background-color: white;
+            padding:  0rem 2rem;
+            border-radius: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            
+        }
+        .header{
+            background-color: white;
+        }
+
+        .header-container{
+            height: 100%;
+            width: 100%;
+            background-color: white;
+        }
         .header .nav{
             gap: 0;
         }
         .header .nav li{
             padding: 0;
+            margin: 0;
         }
         .header .nav li a{
             display: block;
-            padding: 2.5rem 2rem;
+            padding: 2.5rem 1.2rem;
             font-size: 1.6rem;
             font-weight: 700;
-            color: #343f52;
+            color: white ;
             transition: all 200ms ease-in-out;
             word-spacing: 0.1px;
             line-height: 1.7;
             letter-spacing: -.02rem;
-            font-family: sans;
+            font-family: "Work Sans", sans-serif !important;
+            text-decoration: none;
+            
         }
-        .pages .site-header-contentt{
-            backbround-color:#f6f7f9;
+        .header .nav {
+            padding-right: 0; 
         }
-         @media ( max-width: 576px) {  
-            max-width: 100%;
+     
+        .navigation-link-wraper{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #1e2228;
+        }
+        .navigation-link-wraper .nav{
+            display: flex;
+            flex-direction: column;
+            width: 30rem;
+            align-items: center;
+            padding-top: 1rem;
+            color: white;
+
+        }
+        .hide-sidebar{
+            left: -100% !important;
+            transition: 0.5s ease-in-out;
+        }
+        .log-for-small-screen{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+           
+        }
+        .log-for-small-screen a{
+            
+            padding: 2.4rem 0rem;
+        }
+        button.hamburger-menu::before{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 3px;
+            margin: 0 0 5px;
+            transition: all 200ms ease-in-out;
+            background: #343f52;
+            box-sizing: border-box`;
+        }
+        button.hamburger-menu::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 3px;
+            margin: 0 0 5px;
+            transition: all 200ms ease-in-out;
+            background: #343f52;
+            box-sizing: border-box`;
+        }
+        .hamburger-menu{
+            width: 2.4rem;
+            height: 2.2rem;
+        }
+        .hamburger-menu span{
+            display: block;
+            width: 100%;
+            height: 3px;
+            margin: 0 0 5px;
+            transition: all 200ms ease-in-out;
+            background: #343f52;
+        }
+        button.hamburger-menu.active span{
+            -webkit-transform: scale(0)
+        } 
+        
+        .active {
+            color: rgba(37,37,37,.356)!important;
+        }
+        
+        .sidebar-logo{
+            width: 200px;
+            padding: 3rem 0rem;
+        }
+        .show-sidebar{
+            left: 0% !important;
+            transition: 0.5s ease-in-out;
+        }
+
+        button.hamburger-menu.active::before{
+            transform: translateY(8px)rotate(45deg);
+            --webkit-transform: translateY(8px)rotate(45deg);
+        }
+        button.hamburger-menu.active::after{
+            transform: translateY(-8px)rotate(-45deg);
+            --webkit-transform: translateY(-8px)rotate(-45deg);;
+        }
+  
+  
+        @media (min-width: 576px) {  
+            .header-container{
+                padding: 0;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) { 
+            .header-container{
+                max-width: 720px;
+            }
+            
          }
-        /* sm */
-        @media (min-width: 640px and max-width: 767px) { 
-            max-width: 540px;
 
-}        /* 'md'*/
-        @media (min-width: 768px and max-width: 1023px) { 
-            max-width: 720px;
+        @media (min-width: 992px) { 
+            .header-container{
+                max-width: 960px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                margin-left: 0rem auto;                
+            }
+            .header{
 
-}        /* 'lg'*/
-        @media (min-width: 1024px and max-width: 1279px) { 
-            max-width: 960px;
+                background-color: transparent;
+            }
+            .nav-wraper{
+                margin-top: 4.5rem;
+                box-shadow: 0 0.25rem 0.75rem rgb(30 34 40 / 2%);
+            }   
+            .navigation-link-wraper{
+                position: relative;
+                
+            }
+            .navigation-link-wraper .nav{
+                display: flex;
+                flex-direction: row;
+                padding: 0;
+                align-items: unset;
+                background-color: white;
+                width: unset;
+            }
+            .log-for-small-screen{
+                display: unset;
+                width: unset;
+            }
+            .hide-sidebar{
+                left: 0%;
+                position: initial;
+            }
+            .header-container{
+                background-color: unset;
+            }
+            .log-for-small-screen a{
+                padding: 0rem 0rem;
+            }
+            .header .nav li a{
+                color: #343f52;
+            }
+            .sidebar-logo{
+                display: none;
+            }
+        }
 
-}        /* 'xl'*/
-        @media (min-width: 1280px and max-width: 1535px) {
-            max-width: 1140px;
-}
-        /* '2xl'*/
-        @media (min-width: 1536px) { 
-            max-width: 1320px;
+
+        @media (min-width: 1200px) { 
+            .header-container{
+                max-width: 1140px; 
+            }
+            .header .nav li a{
+                padding-left: 2rem;
+                padding-right: 2rem;
+                
+            }
+         }
+
+        @media (min-width: 1400px) {  
+            .header-container{
+                max-width: 1320px; 
+            }
         }
     </style>
 
@@ -70,9 +251,39 @@
 <body class="{{body_class}} is-head-{{#match @custom.navigation_layout "Logo on cover"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}" style="background:#f6f7f9!important">
 <div class="viewport">
 
-    <header id="gh-head" class="gh-head header outer{{#match @custom.header_style "Hidden"}} is-header-hidden{{/match}}" style="display: flex;padding:0;background:#f6f7f9!important;justify-content: center;height: fit-content;">
-        <div class="gh-head-inner inner" style="font-size:20px;background-color: white;padding:0px 2rem;margin:0px 8.66rem;color:#343f52;margin-top: 45px;column-gap: 0px;border-radius: 8px;box-shadow: 0 0.25rem 0.75rem rgb(30 34 40 / 2%);">
-                <div class="gh-head-brand">
+    <header id="gh-hea" class="w-full header">
+        <div class="header-container">
+            <div class="nav-wraper">
+                <div class="gh-head-bran log-for-small-screen ">
+                    <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}} ">
+                        {{#if @site.logo}}
+                            <img src="{{@site.logo}}" alt="{{@site.title}}">
+                        {{else}}
+                            {{@site.title}}
+                        {{/if}}
+                    </a>
+                    <div class="flex lg:hidden items-center">   
+                        {{!-- <button class="gh-search gh-icon-btn" data-ghost-search style="width: 50px;height:60px;margin:0rem 1rem;">{{> "icons/search"}}</button> --}}
+                        <button id="hamburger-menu" class="hamburger-menu" >
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="navigation-link-wraper hide-sidebar">
+                        <a class="sidebar-logo" href="{{@site.url}} ">
+                            {{#if @site.logo}}
+                                <img src="https://res.cloudinary.com/cdmnk/image/upload/f_auto,q_85/v1639476272/assets/images/brands/jeryqxjgicup4atwuyv8.png" alt="{{@site.title}}">
+                            {{else}}
+                                {{@site.title}}
+                            {{/if}}
+                        </a>
+                        {{navigation}}
+                        <button id="close-btn" class="absolute lg:hidden top-4 right-4">cross</button>
+                </div>
+            </div>
+        </div>
+        {{!-- <div class="gh-head-inner inner bg-white font-[20px] text-[#343f52] w-full mx-0 py-[24px] gap-0 px-[1rem]" style="gap:0;column-gap: 0px;border-radius: 8px;box-shadow: 0 0.25rem 0.75rem rgb(30 34 40 / 2%);">
+                <div class="gh-head-brand ">
                     <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
                         {{#if @site.logo}}
                             <img src="{{@site.logo}}" alt="{{@site.title}}">
@@ -83,7 +294,6 @@
                     <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
                     <button class="gh-burger"></button>
                 </div>
-
                 <nav class="gh-head-menu" style="margin:0;justify-content: end;">
                     {{navigation}}
                     {{#unless @site.members_enabled}}
@@ -91,31 +301,15 @@
                             <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
                         {{/match}}
                     {{/unless}}
-                </nav>
-
-                {{!-- <div class="gh-head-actions">
-                    {{#unless @site.members_enabled}}
-                        {{^match @custom.navigation_layout "Stacked"}}
-                            <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-                        {{/match}}
-                    {{else}}
-                        <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-                        <div class="gh-head-members">
-                            {{#unless @member}}
-                                {{#unless @site.members_invite_only}}
-                                    <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
-                                    <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
-                                {{else}}
-                                    <a class="gh-head-button" href="#/portal/signin" data-portal="signin">Sign in</a>
-                                {{/unless}}
-                            {{else}}
-                                <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
-                            {{/unless}}
-                        </div>
-                    {{/unless}}
-                </div> --}}
-        </div>
+                </nav>  
+        </div> --}}
+        {{!-- <nav>
+            {{navigation}}
+        </nav> --}}
     </header>
+    {{!-- <div class="w-full h-[10vh] border-2 border-red-500">
+        karan
+    </div> --}}
 
     <div class="site-content pages">
         {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
@@ -153,6 +347,34 @@ $(document).ready(function () {
     // FitVids - Makes video embeds responsive
     $(".gh-content").fitVids();
 });
+document.getElementById("close-btn").addEventListener('click',function (){
+    console.log("clicked on the btn");
+    let navigationLinkWraper =document.getElementsByClassName("navigation-link-wraper")[0];
+
+    //if(navigationLinkWraper.classList.add)
+    navigationLinkWraper.classList.add("hide-sidebar")
+    console.log(navigationLinkWraper)
+})
+
+document.getElementById("hamburger-menu").addEventListener('click',function (){
+    let navigationLinkWraper =document.getElementsByClassName("navigation-link-wraper")[0];
+    let hamburgerMenuButton=document.getElementById("hamburger-menu")
+    if(navigationLinkWraper.classList.contains("hide-sidebar")){ // we need to show sidebar
+        navigationLinkWraper.classList.remove("hide-sidebar");
+        navigationLinkWraper.classList.add("show-sidebar");
+        
+        hamburgerMenuButton.classList.add("active");
+
+    }else{ //we need to hide sidebar 
+        navigationLinkWraper.classList.add("hide-sidebar")
+        navigationLinkWraper.classList.remove("show-sidebar");
+
+        // we need to make hamburger menu as cross icon
+        
+
+        hamburgerMenuButton.classList.remove("active");
+    }
+})
 </script>
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
