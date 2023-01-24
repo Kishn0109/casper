@@ -30,9 +30,6 @@ production stylesheet in assets/built/screen.css
 @import "global.css";
 @import "header.css";
 @import "footer.css";
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
 
 :root {
   /* Colours */
